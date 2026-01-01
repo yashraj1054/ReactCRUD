@@ -11,7 +11,7 @@ export default function StatCard({ title, value, onClick }) {
         transition
       "
     >
-      <p className="text-sm text-gray-500">{title}</p>
+      <p className="text-sm text-gray-500 dark:text-white">{title}</p>
       <p className="text-3xl font-semibold text-gray-900 dark:text-white">
         {value}
       </p>

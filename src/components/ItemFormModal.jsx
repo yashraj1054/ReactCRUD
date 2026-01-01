@@ -34,12 +34,12 @@ export default function ItemFormModal({
   return (
     <div className="fixed inset-0 bg-black/50 flex items-center justify-center">
       <div className="bg-white dark:bg-gray-800 p-6 rounded w-full max-w-lg">
-        <h2 className="text-lg font-semibold mb-4">{title}</h2>
+        <h2 className="text-lg font-semibold mb-4 dark:text-white">{title}</h2>
 
         <form onSubmit={submit} className="space-y-4">
           {/* TITLE */}
           <input
-            className="w-full border p-2 rounded"
+            className="w-full border p-2 rounded dark:text-gray-300 placeholder:text-gray-400 placeholder:dark:text-gray-300"
             placeholder="Title"
             value={form.title}
             onChange={(e) =>
@@ -49,7 +49,7 @@ export default function ItemFormModal({
 
           {/* DESCRIPTION */}
           <textarea
-            className="w-full border p-2 rounded"
+            className="w-full border p-2 rounded dark:text-gray-300 placeholder:text-gray-400 placeholder:dark:text-gray-300"
             placeholder="Description"
             value={form.description}
             onChange={(e) =>
@@ -59,7 +59,7 @@ export default function ItemFormModal({
 
           {/* STATUS */}
           <select
-            className="w-full border p-2 rounded"
+            className="w-full border p-2 rounded dark:text-gray-300"
             value={form.status}
             onChange={(e) =>
               setForm({ ...form, status: e.target.value })
@@ -73,10 +73,10 @@ export default function ItemFormModal({
           {/* DATE & TIME (AUTO-FILLED) */}
           <div className="grid grid-cols-2 gap-4">
             <div>
-              <label className="text-sm">Due Date</label>
+              <label className="text-sm dark:text-gray-300">Due Date</label>
               <input
                 type="date"
-                className="w-full border p-2 rounded"
+                className="w-full border p-2 rounded dark:text-gray-300"
                 value={form.dueDate}
                 onChange={(e) =>
                   setForm({ ...form, dueDate: e.target.value })
@@ -85,10 +85,10 @@ export default function ItemFormModal({
             </div>
 
             <div>
-              <label className="text-sm">Due Time</label>
+              <label className="text-sm dark:text-gray-300">Due Time</label>
               <input
                 type="time"
-                className="w-full border p-2 rounded"
+                className="w-full border p-2 rounded dark:text-gray-300"
                 value={form.dueTime}
                 onChange={(e) =>
                   setForm({ ...form, dueTime: e.target.value })
@@ -99,7 +99,7 @@ export default function ItemFormModal({
 
           {/* ACTIONS */}
           <div className="flex justify-end gap-2 pt-4">
-            <button type="button" onClick={onClose}>
+            <button className="dark:text-gray-300" type="button" onClick={onClose}>
               Cancel
             </button>
             <button className="bg-blue-500 text-white px-4 py-2 rounded">

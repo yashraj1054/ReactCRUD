@@ -20,17 +20,17 @@ export default function DashboardView({
       </div>
 
       <div className="bg-white dark:bg-gray-800 rounded p-4">
-        <h2 className="font-semibold mb-4">Recent Tasks</h2>
+        <h2 className="font-semibold text-gray-900 dark:text-white mb-3">Recent Tasks</h2>
 
         <ul className="space-y-3">
           {recentTasks.map(task => (
             <li
               key={task.id}
               onClick={() => setEditingItem(task)}
-              className="cursor-pointer p-3 rounded border hover:bg-gray-50 dark:hover:bg-gray-700"
+              className="cursor-pointer p-3 rounded border border-gray-300 dark:border-gray-300 hover:bg-gray-50 dark:hover:bg-gray-700"
             >
-              <h3 className="font-medium">{task.title}</h3>
-              <p className="text-sm text-gray-500">{task.description}</p>
+              <h3 className="font-medium dark:text-white">{task.title}</h3>
+              <p className="text-sm text-gray-500 dark:text-gray-300">{task.description}</p>
             </li>
           ))}
         </ul>

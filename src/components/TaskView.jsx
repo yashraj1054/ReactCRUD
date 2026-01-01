@@ -67,7 +67,10 @@ export default function TasksView({
         <select
           value={sortBy}
           onChange={(e) => setSortBy(e.target.value)}
-          className="h-11 px-3 border rounded"
+          className="h-11 px-3 rounded border
+    bg-white text-gray-900 border-gray-600
+    dark:bg-slate-800 dark:text-gray-300 dark:border-gray-300
+    focus:outline-none focus:ring-2 focus:ring-blue-500 "
         >
           <option value="date_desc">Newest</option>
           <option value="date_asc">Oldest</option>
@@ -79,7 +82,7 @@ export default function TasksView({
         {paginatedItems.map((item) => (
           <li
             key={item.id}
-            className={`p-4 rounded border
+            className={`p-4 rounded border 
     ${
       isOverdue(item)
         ? "bg-red-50 border-red-400"
@@ -92,7 +95,7 @@ export default function TasksView({
   `}
           >
             <h3 className="font-semibold">{item.title}</h3>
-            <p className="text-sm text-gray-500">{item.description}</p>
+            <p className="text-sm text-gray-500 ">{item.description}</p>
 
             {item.dueDate && (
     <div className="mt-2 text-xs text-gray-500">

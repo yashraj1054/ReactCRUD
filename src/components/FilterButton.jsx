@@ -2,7 +2,7 @@ export default function FilterButton({ label, active, onClick }) {
   return (
     <button
       onClick={onClick}
-      className={`px-3 py-2 rounded text-sm border transition
+      className={`px-3 py-2 rounded text-sm border  transition 
         ${
           active
             ? "bg-blue-500 text-white border-blue-500"
