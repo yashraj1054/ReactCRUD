@@ -20,8 +20,8 @@ export default function TasksView({
 }) {
   return (
     <>
-      <div className="flex justify-between items-center mb-4">
-        <div className="flex gap-2">
+      {/* <div className="flex justify-between items-center mb-4">
+        <div className="flex flex-col md:flex-row gap-3 ">
           {["all", "active", "pending", "completed"].map((s) => (
             <FilterButton
               key={s}
@@ -38,7 +38,29 @@ export default function TasksView({
         >
           + Add Task
         </button>
-      </div>
+      </div> */}
+      <div className="flex flex-wrap items-center justify-between gap-3 mb-4">
+  {/* FILTER BUTTONS */}
+  <div className="flex flex-wrap gap-2">
+    {["all", "active", "pending", "completed"].map((s) => (
+      <FilterButton
+        key={s}
+        label={s.charAt(0).toUpperCase() + s.slice(1)}
+        active={statusFilter === s}
+        onClick={() => setStatusFilter(s)}
+      />
+    ))}
+  </div>
+
+  {/* ADD TASK */}
+  <button
+    onClick={() => setShowAddModal(true)}
+    className="bg-blue-500 text-white px-4 py-2 rounded whitespace-nowrap"
+  >
+    + Add Task
+  </button>
+</div>
+
 
       <div className="flex items-center gap-4 mb-4">
         <SearchBar value={search} onChange={setSearch} />

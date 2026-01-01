@@ -32,6 +32,9 @@ export const getRelativeTime = (task) => {
 
 export default function App() {
 
+  const [sidebarOpen, setSidebarOpen] = useState(false)
+
+
   /* ================= FILTER ================= */
   const [statusFilter, setStatusFilter] = useState("all")
 
@@ -124,10 +127,11 @@ export default function App() {
   /* ================= UI ================= */
   return (
     <div className="h-screen flex flex-col">
-      <Header />
+      <Header onMenuClick={() => setSidebarOpen(true)} />
 
       <div className="flex flex-1 overflow-hidden">
-        <Sidebar />
+        <Sidebar isOpen={sidebarOpen}
+  onClose={() => setSidebarOpen(false)} />
 
         <main className="flex-1 p-6 overflow-y-auto bg-gray-100 dark:bg-gray-900">
           <Routes>
